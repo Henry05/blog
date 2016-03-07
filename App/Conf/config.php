@@ -10,9 +10,9 @@ return array(
     'LOAD_EXT_CONFIG' => 'verify,water',
 
     //数据库连接配置
-    'DB_HOST' => '115.28.213.41',
-    'DB_USER' => 'root',
-    'DB_PWD' => 'root',
+    'DB_HOST' => '',
+    'DB_USER' => '',
+    'DB_PWD' => '',
     'DB_NAME' => 'blog',
     'DB_PREFIX' => 'hd_',
 
