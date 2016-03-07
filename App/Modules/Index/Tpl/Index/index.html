@@ -1,0 +1,26 @@
+<include file="Common:header"/>
+<link rel="stylesheet" href="__PUBLIC__/Css/index.css"/>
+<include file="Common:nav"/>
+<div class='main'>
+    <div class='main-left'>
+        <p>后盾博文</p>
+
+            <foreach name="cates" item="v">
+                <dl>
+                    <dt>{$v.name}<a href="{:U('/c_'.$v['id'])}">更多>></a></dt>
+                    <foreach name="v.blog" item="k">
+                        <dd>
+                            <a href="{:U('/'.$k['id'])}">{$k.title}</a>
+                            <span>{$k.time|date='m/d',###}</span>
+                        </dd>
+                    </foreach>
+
+                </dl>
+            </foreach>
+    </div>
+    <include file="Common:right" />
+</div>
+<!--主体右侧-->
+
+<!--底部-->
+<include file="Common:buttom" />

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="__PUBLIC__/Css/public.css"/>
+    <style>
+        td, th {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<form action="{:U(GROUP_NAME.'/Category/sortCate')}" method="post">
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>名称</th>
+            <th>级别</th>
+            <th>排序</th>
+            <th>操作</th>
+        </tr>
+
+        <foreach name="cate" item="v">
+            <tr>
+                <td>{$v.id}</td>
+                <td style="text-align: left">{$v.html}{$v.name}</td>
+                <td>{$v.level}</td>
+                <td>
+                    <input type="text" name="{$v.id}" value="{$v.sort}">
+                </td>
+                <td>
+                    [<a href="{:U(GROUP_NAME.'/Category/addCate',array('pid'=>$v['id']))}">添加子分类</a>]
+                    [<a href="">修改</a>]
+                </td>
+            </tr>
+        </foreach>
+        <tr>
+            <td colspan="5" align="center">
+                <input type="submit" value="排序" />
+            </td>
+        </tr>
+    </table>
+</body>
+</form>
+</html>

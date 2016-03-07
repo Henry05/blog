@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="__PUBLIC__/Css/public.css">
+    <style>
+        tr,th{text-align: center}
+    </style>
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>属性名称</th>
+            <th>标题颜色</th>
+            <th>操作</th>
+        </tr>
+
+        <foreach name="attr" item="v">
+            <tr>
+                <td>{$v.id}</td>
+                <td>{$v.name}</td>
+                <td>
+                    <div style='width: 20px;height: 20px;background: {$v.color};text-align: center'></div>
+                </td>
+                <td>
+                    [<a href="{:U(GROUP_NAME.'/Attribute/updateAttr',array('id'=>$v['id']))}">修改</a>]
+                    [<a href="{:U(GROUP_NAME.'/Attribute/runDeleteAttr',array('id'=>$v['id']))}">删除</a>]
+                </td>
+            </tr>
+        </foreach>
+    </table>
+</body>
+</html>
